@@ -5,9 +5,9 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <div className="hero">
+        <div className="hero mt-10">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={img}  className="w-1/2 sm:w-full" alt='banner'/>
+                <img src={img}  className="lg:w-1/2" alt='banner'/>
                 <div>
                     <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
                     <p className="py-6">We have modern well equipped Operation unit. We use modern technology including  Autoclave Machine, UV Cabinet,  Endodontic Electric Motor, Apex Locator, Intraoral camera  to offer best oral treatment.</p>
