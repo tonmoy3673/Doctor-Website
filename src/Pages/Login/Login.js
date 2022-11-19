@@ -1,14 +1,31 @@
 
 
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 
 const Login = () => {
     const { register, handleSubmit,formState: { errors } } = useForm();
-   
+    const {signIn}=useContext(AuthContext);
+    const [loginError,setLoginError]=useState('');
+
+    
     const handleLogin=data=>{
-        console.log(data);
+
+        setLoginError('');
+        signIn(data.email, data.password)
+        .then(result=>{
+            const user=result.user;
+           
+        })
+        .catch(error=>{
+            console.log(error)
+            setLoginError(error.message)
+        });
+
+        
 
     }
     return (
@@ -46,6 +63,9 @@ const Login = () => {
                     
                    
                     <input type="submit" className='btn btn-primary w-full' value='Login' />
+                    <div>
+                        {loginError && <p className='text-red-600'>{loginError}</p>}
+                    </div>
                 </form>
                 <p className='py-2'>New to Doctor Portal <Link to='/signup' className='text-lime-600 underline'>Create an account</Link></p>
                 <div className="divider">OR</div>
