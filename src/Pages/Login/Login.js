@@ -22,6 +22,7 @@ const Login = () => {
         signIn(data.email, data.password)
         .then(result=>{
             const user=result.user;
+            console.log(user);
             navigate(from,{replace:true});
            
         })

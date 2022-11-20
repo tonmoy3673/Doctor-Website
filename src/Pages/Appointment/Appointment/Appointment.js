@@ -9,8 +9,9 @@ const Appointment = () => {
             <AppointmentBanner
             selectedDate={selectedDate}
             setSelectedDate={setSelectedDate}
-            
             ></AppointmentBanner>
+
+
             <AvailableAppointment
             selectedDate={selectedDate}
             ></AvailableAppointment>

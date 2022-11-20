@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Signup = () => {
@@ -10,17 +10,22 @@ const Signup = () => {
 
     const {createUser,updateUser} =useContext(AuthContext);
     const [signUpError,setSignUpError]=useState('')
+    const navigate=useNavigate();
     const handleSignup=data=>{
-        setSignUpError('')
-        createUser(data.email,data.password)
+        setSignUpError('');
+        createUser(data.email, data.password)
         .then(result =>{
             const user=result.user;
+            console.log(user);
             toast('User created successfully!!')
             const userInfo={
-                displayName: data.name
+                displayName:(data.name)
             }
             updateUser(userInfo)
-            .then(()=>{})
+            .then(()=>{
+
+                navigate('/');
+            })
             .catch(err=>{
                 console.log(err)
                 
@@ -47,7 +52,7 @@ const Signup = () => {
                         <input type="text" {...register("name",{
                             required:'Name is required'
                         })} className="input input-bordered w-full max-w-xs"/>
-                        {errors.name && <p role='alert' className='text-red-600'>{errors.name?.message}</p>}
+                        {errors.name && <p role='alert' className='text-red-600'>{errors?.name?.message}</p>}
                     </div>
                     
                     <div className="form-control w-full max-w-xs">
