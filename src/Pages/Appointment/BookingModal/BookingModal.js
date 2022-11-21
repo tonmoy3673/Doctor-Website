@@ -71,7 +71,7 @@ const BookingModal = ({ treatment, selectedDate,setTreatment,refetch }) => {
                                 slots.map((slot,i)=><option value={slot} key={i}>{slot}</option>)
                             }
                         </select>
-                        <input name='name' type="text" placeholder="Your name" className="input input-bordered w-full" />
+                        <input name='name' defaultValue={user?.displayName} type="text" disabled placeholder="Your name" className="input input-bordered w-full" />
                         <input name='email' defaultValue={user?.email} disabled type="email" placeholder="Email address" className="input input-bordered w-full" />
                         <input name='phone'  type="number" placeholder="Phone number" className="input input-bordered w-full" />
                         <br />

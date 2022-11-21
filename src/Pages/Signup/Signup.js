@@ -16,7 +16,7 @@ const Signup = () => {
         createUser(data.email, data.password)
         .then(result =>{
             const user=result.user;
-            console.log(user);
+            
             toast('User created successfully!!')
             const userInfo={
                 displayName:(data.name)
@@ -24,7 +24,7 @@ const Signup = () => {
             updateUser(userInfo)
             .then(()=>{
 
-                navigate('/');
+                saveUser(data.name,data.email);
             })
             .catch(err=>{
                 console.log(err)
@@ -37,6 +37,32 @@ const Signup = () => {
             setSignUpError(error.message)
         });
 
+        const saveUser=(name,email)=>{
+            const user={name,email};
+            fetch('http://localhost:5000/users',{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body:JSON.stringify(user)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                getUserToken(email);
+            })
+        }
+
+    }
+
+    const getUserToken=email=>{
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res=>res.json())
+        .then (data=>{
+            if(data.accessToken){
+                localStorage.setItem('accessToken',data.accessToken);
+                navigate('/');
+            }
+        })
     }
 
     return (
