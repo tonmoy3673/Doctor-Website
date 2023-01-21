@@ -1,4 +1,4 @@
-import { async } from '@firebase/util';
+
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider';
@@ -10,14 +10,18 @@ const MyAppointment = () => {
     const {data:bookings=[]}=useQuery({
         queryKey:['bookings',user?.email],
         queryFn:async()=>{
-            const res=await fetch(url);
+            const res=await fetch(url,{
+                headers:{
+                    authorization:`bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data= await res.json();
             return data;
         }
     })
     return (
         <div>
-            <h3 className='text-2xl text-primary py-5'>My Appointments</h3>
+            <h3 className='text-2xl text-primary font-semibold text-center py-10'>My Appointments</h3>
 
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -35,11 +39,11 @@ const MyAppointment = () => {
                         
                         {
                             bookings.map((booking,i)=>
-                                <tr key={booking._id}>
+                                <tr key={booking._id} className="hover">
                             <th>{i+1}</th>
-                            <td>{booking.Patient}</td>
+                            <td className='font-semibold'>{booking.Patient}</td>
                             <td>{booking.treatment}</td>
-                            <td><span>{booking.appointmentData}</span></td>
+                            <td>{booking.appointmentDate}</td>
                             <td>{booking.slot}</td>
                         </tr>
                                 )
