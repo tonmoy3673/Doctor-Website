@@ -53,12 +53,10 @@ const AllUsers = () => {
         
         <td className='font-semibold'>{user.name}</td>
         <td>{user.email}</td>
-        <td>{user?.role!=='admin' && <button onClick={()=>handleAdmin(user._id)} className='btn btn-primary btn-xs text-white'>Make Admin</button>}</td>
+        <td>{user?.role !== 'admin' && <button onClick={() =>handleAdmin(user._id)} className='btn btn-primary btn-xs text-white'>Make Admin</button>}</td>
         <td><button className='btn btn-error btn-xs text-white'>Delete</button></td>
         
-      </tr>
-        
-        )
+      </tr>)
       }
       
       
