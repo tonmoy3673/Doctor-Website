@@ -10,21 +10,21 @@ const InfoCards = () => {
         {
             id:1,
             name:'Opening Hours',
-            description:'Open 9.00 am to 5.00 pm everyday',
+            description:'Open 9.00 am to 5.00 pm everyday. Except Sunday.',
             icon:clock,
             bgClass:'bg-primary'
         },
         {
             id:2,
             name:'Our Location',
-            description:'Open 9.00 am to 5.00 pm everyday',
+            description:'Nikunja-2,Dhaka-1229',
             icon:marker,
             bgClass:'bg-secondary'
         },
         {
             id:3,
             name:'Contact',
-            description:'Open 9.00 am to 5.00 pm everyday',
+            description:'+88017123456789',
             icon:phone,
             bgClass:'bg-primary'
         }

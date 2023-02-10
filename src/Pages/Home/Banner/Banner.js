@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img from '../../../images/chair.png';
 import PrimaryButton from '../../../MyComponent/PrimaryButton';
 
@@ -12,7 +13,8 @@ const Banner = () => {
                 <div>
                     <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
                     <p className="py-6">We have modern well equipped Operation unit. We use modern technology including  Autoclave Machine, UV Cabinet,  Endodontic Electric Motor, Apex Locator, Intraoral camera  to offer best oral treatment.</p>
-                    <PrimaryButton>Getting Started</PrimaryButton>
+                    
+                    <Link to='/appointment'><PrimaryButton>Getting Started</PrimaryButton></Link>
                 </div>
             </div>
         </div>
