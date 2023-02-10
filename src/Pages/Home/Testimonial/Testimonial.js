@@ -19,14 +19,14 @@ const Testimonial = () => {
             _id:2,
             name:'Fatima',
             location:'Brazil',
-            rev:'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content.',
+            rev:'I had a fantastic experience at Toothtopia. The dentist was thorough and made sure I was comfortable throughout my appointment. I highly recommend this dental practice to anyone in need of quality care',
             img:people2 
         },
         {
             _id:3,
             name:'Tina',
             location:'USA',
-            rev:'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content.',
+            rev:'I had a wonderful visit at Toothtopia. The staff was friendly, the technology was top-notch, and provided exceptional care resulting in a healthy and beautiful smile.',
             img:people3 
         }
     ]
