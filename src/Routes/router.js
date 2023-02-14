@@ -5,6 +5,7 @@ import Appointment from "../Pages/Appointment/Appointment/Appointment";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 import MyAppointment from "../Pages/Dashboard/MyAppointment/MyAppointment";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -56,6 +57,11 @@ export const router=createBrowserRouter([
                 path:'/dashboard/AllUsers',
                 element:<AdminRoute><AllUsers/></AdminRoute>
             },
+            {
+                path:'dashboard/payment/:id',
+                element:<Payment/>,
+                loader:({params})=>fetch(`http://localhost:5000/booking/${params.id}`)
+            }
 
         ]
 
