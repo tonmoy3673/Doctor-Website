@@ -8,6 +8,7 @@ import MyAppointment from "../Pages/Dashboard/MyAppointment/MyAppointment";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 
 import Home from "../Pages/Home/Home/Home";
+import ErrorPage from "../Pages/Home/Share/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
 import AdminRoute from "./AdminRoute/AdminRoute";
@@ -17,6 +18,7 @@ export const router=createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<ErrorPage/>,
         children:[
 
             {
@@ -48,6 +50,8 @@ export const router=createBrowserRouter([
         element:<PrivateRoute>
             <DashboardLayout></DashboardLayout>
         </PrivateRoute>,
+        errorElement:<ErrorPage/>,
+        
         children:[
             {
                 path:'/dashboard',
