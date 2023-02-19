@@ -12,7 +12,7 @@ const CheckoutFrom = ({booking}) => {
     const stripe=useStripe();
     const elements=useElements();
     const [cardError,setCardError]=useState();
-    const {price,Patient,email}=booking;
+    const {price,Patient,email,_id}=booking;
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
@@ -78,9 +78,30 @@ const CheckoutFrom = ({booking}) => {
             toast.success('Thank you for Payment!')
             
           }
-          setProcession(false);
           
 
+          const payment={
+            price,
+            transactionID:paymentIntent.id,
+            email,
+            bookingId:_id
+
+          }
+          fetch('http://localhost:5000/payments',{
+            method:'POST',
+            headers:{
+              'content-type':'application/json',
+              authorization:`bearer ${localStorage.getItem('accessToken')}`
+            },
+            body:JSON.stringify(payment)
+          })
+          .then(res=>res.json())
+          .then(data=>{
+            if (data.insertedID) {
+              
+            }
+          })
+          setProcession(false);
     }
 
     return (

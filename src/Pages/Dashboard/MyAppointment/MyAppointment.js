@@ -57,8 +57,10 @@ const MyAppointment = () => {
                                 }
                                 
                                 {
-                                   booking.price && booking.paid && <span className='text-success text-sm font-semibold'>
-                                    Paid
+                                   booking?.price && booking?.paid && <span>
+                                   
+                                    <input type="checkbox" checked className="checkbox checkbox-info ml-2 font-sm" />
+                                    
                                    </span> 
                                 }
                                 
