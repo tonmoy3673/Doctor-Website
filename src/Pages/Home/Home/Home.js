@@ -4,6 +4,7 @@ import InfoCards from '../InfoCards/InfoCards';
 import MakeAppointment from '../MakeAppointment/MakeAppointment';
 import Services from '../Services/Services';
 import Testimonial from '../Testimonial/Testimonial';
+import Contact from './Contact/Contact';
 import SideBanner from './SideBanner/SideBanner';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <SideBanner></SideBanner>
             <MakeAppointment></MakeAppointment>
             <Testimonial></Testimonial>
+            <Contact/>
         </div>
     );
 };
