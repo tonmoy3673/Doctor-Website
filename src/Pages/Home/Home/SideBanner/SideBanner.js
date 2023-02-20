@@ -4,7 +4,7 @@ import PrimaryButton from '../../../../MyComponent/PrimaryButton';
 
 const SideBanner = () => {
     return (
-        <div className="hero bg-base-200 py-10">
+        <div className="hero py-10">
             <div className="hero-content flex-col lg:flex-row">
                 <img src={treatment} className='lg:w-1/2 rounded-md' alt='banner' />
                 <div className=''>

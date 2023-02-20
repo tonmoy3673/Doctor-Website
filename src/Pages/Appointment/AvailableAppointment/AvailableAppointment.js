@@ -13,7 +13,7 @@ const AvailableAppointment = ({selectedDate}) => {
 
     const {data:appointment=[],refetch,isLoading}=useQuery({
         queryKey:['appointment'],
-        queryFn:()=>fetch(`http://localhost:5000/appointment?date=${date}`)
+        queryFn:()=>fetch(`https://doctor-server-bice.vercel.app/appointment?date=${date}`)
         .then(res=>res.json())
     });
 
@@ -22,7 +22,7 @@ const AvailableAppointment = ({selectedDate}) => {
     }
    
     return (
-        <div className='py-10'>
+        <div className='py-10 bg-[#f5f6fa]'>
             <p className='text-center text-primary font-bold'>Available Appointments on {format(selectedDate, 'PP')}</p>
             <div className='grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-6'>
             {

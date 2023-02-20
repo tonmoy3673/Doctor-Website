@@ -16,7 +16,7 @@ const CheckoutFrom = ({booking}) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://doctor-server-bice.vercel.app/create-payment-intent", {
           method: "POST",
           headers: { "Content-Type": "application/json",
             authorization:`bearer ${localStorage.getItem('accessToken')}`
@@ -87,7 +87,7 @@ const CheckoutFrom = ({booking}) => {
             bookingId:_id
 
           }
-          fetch('http://localhost:5000/payments',{
+          fetch('https://doctor-server-bice.vercel.app/payments',{
             method:'POST',
             headers:{
               'content-type':'application/json',

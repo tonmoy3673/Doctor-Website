@@ -7,8 +7,8 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <div className="hero mt-10 chair">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero py-10 chair">
+            <div className="hero-content flex-col lg:flex-row-reverse lg:px-10">
                 <img src={img}  className="lg:w-1/2" alt='banner'/>
                 <div>
                     <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>

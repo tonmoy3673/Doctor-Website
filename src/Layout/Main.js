@@ -5,7 +5,7 @@ import Navbar from '../Pages/Home/Share/Navbar/Navbar';
 
 const Main = () => {
     return (
-        <div>
+        <div className='bg-[#f5f6fa]'>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

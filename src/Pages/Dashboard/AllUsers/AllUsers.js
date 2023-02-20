@@ -6,16 +6,16 @@ const AllUsers = () => {
     const {data: users =[], refetch}=useQuery({
     queryKey:['users'],
     queryFn:async()=>{
-        const res=await fetch('http://localhost:5000/users');
+        const res= fetch('https://doctor-server-bice.vercel.app/users')
         const data=await res.json();
-        console.log(data);
+        
         return data;
         
     }
     })
 
     const handleAdmin=id=>{
-        fetch(`http://localhost:5000/users/admin/${id}`,{
+        fetch(`https://doctor-server-bice.vercel.app/users/admin/${id}`,{
             method: 'PUT',
             headers:{
                 authorization:`bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,8 @@ const AllUsers = () => {
     <tbody>
       {
         users.map((user,i)=><tr key={user._id} className="hover">
-        <th>{i+1}</th>
+        <th>{i+1} </th>
+        <p>console.log(users)</p>
         <td className='font-semibold'>{user.name}</td>
         <td>{user.email}</td>
         <td>{ user?.role !=='admin' && <button onClick={() =>handleAdmin(user._id)} className='btn btn-xs btn-success text-white'>Make Admin</button>}</td>
@@ -59,6 +60,7 @@ const AllUsers = () => {
       }
     
     </tbody>
+    
   </table>
 </div>
         </div>

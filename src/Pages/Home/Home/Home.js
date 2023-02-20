@@ -9,7 +9,7 @@ import SideBanner from './SideBanner/SideBanner';
 
 const Home = () => {
     return (
-        <div className='mx-auto'>
+        <div className='mx-auto bg-[#f5f6fa]'>
             <Banner></Banner>
             <InfoCards></InfoCards>
             <Services></Services>

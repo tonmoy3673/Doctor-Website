@@ -5,7 +5,7 @@ const Options = ({ options,setTreatment}) => {
     const { name, slots,price } = options;
 
     return (
-        <div className="card shadow-xl">
+        <div className="card hover:bg-base-100 hover:shadow-2xl border border-1 duration-300">
             <div className="card-body text-center">
                 <h2 className="text-lg text-primary font-bold text-center">{name}</h2>
                 <p >{slots.length>0 ? slots[0]:'Please Try Another Day'}</p>
