@@ -9,7 +9,7 @@ const Signup = () => {
 
     const {register,handleSubmit,formState: { errors }}=useForm();
 
-    const {createUser,updateUser} =useContext(AuthContext);
+    const {createUser,updateUser,logInWithGoogle} =useContext(AuthContext);
     const [signUpError,setSignUpError]=useState('');
     const [createdUserEmail, setCreatedUserEmail]=useState('')
     const [token]=useToken(createdUserEmail)
@@ -44,6 +44,7 @@ const Signup = () => {
             setSignUpError(error.message)
         });
 
+        
         const saveUser=(name,email)=>{
             const user={name,email};
             fetch('https://doctor-server-bice.vercel.app/users',{
@@ -116,8 +117,8 @@ const Signup = () => {
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </div>
                 <p className='py-2'>Already have an account <Link to='/login' className='text-lime-600 underline'>Please Login</Link></p>
-                <div className="divider">OR</div>
-                <button className='btn btn-outline w-full'>Login With Google</button>
+                
+                
             </div>
         </div>
     );

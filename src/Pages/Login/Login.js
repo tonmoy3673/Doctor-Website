@@ -1,5 +1,6 @@
 
 
+import { GoogleAuthProvider } from 'firebase/auth';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -10,7 +11,7 @@ import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const { register, handleSubmit,formState: { errors } } = useForm();
-    const {signIn}=useContext(AuthContext);
+    const {signIn,logInWithGoogle}=useContext(AuthContext);
     const [loginError,setLoginError]=useState('');
     const [loginUserEmail,setLoginUserEmail]=useState('');
     const [token]=useToken(loginUserEmail);
@@ -40,11 +41,19 @@ const Login = () => {
         .catch(error=>{
             console.log(error)
             setLoginError(error.message)
-        });
+        });  
+      }
 
-        
-
-    }
+      const googleProvider=new GoogleAuthProvider();
+        const handleGoogle=()=>{
+            logInWithGoogle(googleProvider)
+            .then((result)=>{
+                const user=result.user;
+            toast.success('Login with Google Successfully!!')
+            navigate(from,{replace:true});
+            })
+            .catch(error=>console.error(error))
+        }
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>
@@ -86,7 +95,7 @@ const Login = () => {
                 </form>
                 <p className='py-2'>New to Doctor Portal <Link to='/signup' className='text-lime-600 underline'>Create an account</Link></p>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline w-full'>Login With Google</button>
+                <button onClick={handleGoogle} className='btn btn-outline w-full'>Login With Google</button>
             </div>
         </div>
     );

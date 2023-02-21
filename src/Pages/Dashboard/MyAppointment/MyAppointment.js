@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 
+
 const MyAppointment = () => {
     const {user}=useContext(AuthContext);
 
@@ -15,11 +16,16 @@ const MyAppointment = () => {
                 headers:{
                     authorization:`bearer ${localStorage.getItem('accessToken')}`
                 }
+                
             });
             const data= await res.json();
+            
             return data;
+            
         }
+       
     })
+    
     return (
         <div>
             <h3 className='text-2xl text-primary font-semibold text-center py-10'>My Appointments</h3>

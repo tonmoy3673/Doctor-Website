@@ -6,7 +6,7 @@ const AllUsers = () => {
     const {data: users =[], refetch}=useQuery({
     queryKey:['users'],
     queryFn:async()=>{
-        const res= fetch('https://doctor-server-bice.vercel.app/users')
+        const res= await fetch('https://doctor-server-bice.vercel.app/users')
         const data=await res.json();
         
         return data;
@@ -31,7 +31,7 @@ const AllUsers = () => {
     }
 
     return (
-        <div>
+        <div className='bg-[#f5f6fa]'>
             <h2 className='text-2xl text-primary font-semibold text-center py-10'>All Users </h2>
             <div className="overflow-x-auto">
   <table className="table w-full">
@@ -49,7 +49,7 @@ const AllUsers = () => {
       {
         users.map((user,i)=><tr key={user._id} className="hover">
         <th>{i+1} </th>
-        <p>console.log(users)</p>
+        
         <td className='font-semibold'>{user.name}</td>
         <td>{user.email}</td>
         <td>{ user?.role !=='admin' && <button onClick={() =>handleAdmin(user._id)} className='btn btn-xs btn-success text-white'>Make Admin</button>}</td>
