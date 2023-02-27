@@ -3,6 +3,10 @@ import clock from '../../../icons/clock.svg';
 import marker from '../../../icons/marker.svg';
 import phone from '../../../icons/phone.svg';
 import InfoCard from './InfoCard';
+import Lottie from "lottie-react";
+import contact from  '../Home/./Lottie/contact-us.json';
+
+
 
 const InfoCards = () => {
 
@@ -31,10 +35,25 @@ const InfoCards = () => {
 
     ]
     return (
-        <div className='grid gap-6 mt-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
+        <div className='pt-10'>
+            <h2 className='mb-10 text-2xl font-semibold text-primary text-center'>Customer Support</h2>
+            <div className='flex justify-center items-center flex-col lg:flex-row'>
+           <div className='lg:w-1/2'>
+           <Lottie animationData={contact} loop={true} className='lg:w-7/12 mx-auto rounded'/>
+           </div>
+
+            <div className='lg:w-1/2 mx-auto'>
+                
+            <p className='text-start'>
+            Regular dental visits are essential for maintaining good oral health and preventing serious dental problems. Dentists can identify and treat dental issues early on, which can help to prevent more severe problems from developing.If you are experiencing dental pain or other symptoms, it is important to see a dentist as soon as possible. Prompt treatment can help to prevent the problem from getting worse and may also help to alleviate your symptoms.
+            </p>
+            </div>
+            </div>
+            <div className='grid gap-6 mt-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
             {
                 cardData.map(card=><InfoCard key={card.id} card={card}></InfoCard>)
             }
+        </div>
         </div>
     );
 };
