@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
 import Appointment from "../Pages/Appointment/Appointment/Appointment";
+import ContactUs from "../Pages/ContactUs/ContactUs";
+
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 import MyAppointment from "../Pages/Dashboard/MyAppointment/MyAppointment";
@@ -40,6 +42,10 @@ export const router=createBrowserRouter([
             {
                 path:'/appointment',
                 element:<Appointment></Appointment>
+            },
+            {
+                path:'/contact',
+                element:<ContactUs/>
             }
            
             
@@ -63,6 +69,7 @@ export const router=createBrowserRouter([
                 path:'/dashboard/AllUsers',
                 element:<AdminRoute><AllUsers/></AdminRoute>
             },
+            
             {
                 path:'dashboard/payment/:id',
                 element:<Payment/>,
