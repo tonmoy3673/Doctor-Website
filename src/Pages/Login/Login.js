@@ -56,13 +56,15 @@ const Login = () => {
             .catch(error=>console.error(error))
         }
     return (
-        <div>
-            <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 items-start justify-items-center'>
+        <div className='py-16'>
+            <h2 className='text-3xl font-semibold text-primary text-center '>Login</h2>
+            <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 items-start justify-items-center px-10'>
 
+            <Lottie animationData={login} loop={true} className='lg:w-8/12 mx-auto rounded'/>
 
-            <div className='h-[800px] flex justify-center items-center'>
+            <div className=''>
             <div className='w-96 p-7'>
-                <h2 className='text-xl'>Login</h2>
+                
                 <form onSubmit={handleSubmit(handleLogin)}>
 
                     
