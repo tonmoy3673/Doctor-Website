@@ -40,7 +40,8 @@ export const router=createBrowserRouter([
             {
                 path:'/appointment',
                 element:<Appointment></Appointment>
-            },
+            }
+           
             
         ]
 
@@ -57,6 +58,7 @@ export const router=createBrowserRouter([
                 path:'/dashboard',
                 element:<MyAppointment></MyAppointment>
             },
+            
             {
                 path:'/dashboard/AllUsers',
                 element:<AdminRoute><AllUsers/></AdminRoute>

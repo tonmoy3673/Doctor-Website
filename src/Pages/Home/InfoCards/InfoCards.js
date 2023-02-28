@@ -4,7 +4,7 @@ import marker from '../../../icons/marker.svg';
 import phone from '../../../icons/phone.svg';
 import InfoCard from './InfoCard';
 import Lottie from "lottie-react";
-import contact from  '../Home/./Lottie/contact-us.json';
+import contact from  '../Home/./Lottie/customer.json';
 
 
 
@@ -37,7 +37,7 @@ const InfoCards = () => {
     return (
         <div className='pt-10'>
             <h2 className='mb-10 text-3xl font-semibold text-primary text-center'>Customer Support</h2>
-            <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-center items-center px-10'>
+            <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-center items-center px-16'>
            
            <Lottie animationData={contact} loop={true} className='lg:w-5/12 mx-auto rounded'/>
            
