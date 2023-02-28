@@ -7,7 +7,8 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useToken from '../../hooks/useToken';
-
+import Lottie from "lottie-react";
+import login from '../Home/Home/Lottie/login.json';
 
 const Login = () => {
     const { register, handleSubmit,formState: { errors } } = useForm();
@@ -55,7 +56,11 @@ const Login = () => {
             .catch(error=>console.error(error))
         }
     return (
-        <div className='h-[800px] flex justify-center items-center'>
+        <div>
+            <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 items-start justify-items-center'>
+
+
+            <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>
                 <h2 className='text-xl'>Login</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
@@ -96,6 +101,8 @@ const Login = () => {
                 <p className='py-2'>New to Doctor Portal <Link to='/signup' className='text-lime-600 underline'>Create an account</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogle} className='btn btn-outline w-full'>Login With Google</button>
+            </div>
+        </div>
             </div>
         </div>
     );

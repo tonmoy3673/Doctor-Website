@@ -4,7 +4,8 @@ import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useToken from '../../hooks/useToken';
-
+import Lottie from "lottie-react";
+import signUp from '../Home/Home/Lottie/sign.json';
 const Signup = () => {
 
     const {register,handleSubmit,formState: { errors }}=useForm();
@@ -65,10 +66,15 @@ const Signup = () => {
    
 
     return (
-        <div>
-            <div className='h-[800px] flex justify-center items-center'>
+        <div className='py-16'>
+            <h2 className='text-3xl font-semibold text-primary text-center px-10'>Sign Up</h2>
+
+            <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 items-start justify-items-center'>
+            <Lottie animationData={signUp} loop={true} className='lg:w-8/12 mx-auto rounded'/>
+
+            <div className=''>
             <div className='w-96 p-7'>
-                <h2 className='text-xl'>Signup</h2>
+                
                 <form onSubmit={handleSubmit(handleSignup)}>
                 <div className="form-control w-full max-w-xs">
                         <label className="label">
@@ -121,6 +127,7 @@ const Signup = () => {
                 
                 
             </div>
+        </div>
         </div>
         </div>
     );
