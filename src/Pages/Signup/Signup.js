@@ -73,7 +73,7 @@ const Signup = () => {
             <Lottie animationData={signUp} loop={true} className='lg:w-10/12 mx-auto rounded'/>
 
             <div className=''>
-            <div className='w-96 p-7'>
+            <div className='lg:w-96 p-7'>
                 
                 <form onSubmit={handleSubmit(handleSignup)}>
                 <div className="form-control w-full max-w-xs">

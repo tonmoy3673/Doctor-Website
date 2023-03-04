@@ -63,7 +63,7 @@ const Login = () => {
             <Lottie animationData={login} loop={true} className='lg:w-8/12 mx-auto rounded'/>
 
             <div className=''>
-            <div className='w-96 p-7'>
+            <div className='lg:w-96 p-7'>
                 
                 <form onSubmit={handleSubmit(handleLogin)}>
 

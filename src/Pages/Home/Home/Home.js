@@ -1,4 +1,5 @@
 import React from 'react';
+import Chat from '../../../Chat/Chat';
 import Banner from '../Banner/Banner';
 import InfoCards from '../InfoCards/InfoCards';
 import MakeAppointment from '../MakeAppointment/MakeAppointment';
@@ -9,7 +10,7 @@ import SideBanner from './SideBanner/SideBanner';
 
 const Home = () => {
     return (
-        <div className='mx-auto bg-[#f5f6fa]'>
+        <div className='mx-auto px-10'>
             <Banner></Banner>
             <InfoCards></InfoCards>
             <Services></Services>
@@ -17,6 +18,7 @@ const Home = () => {
             <MakeAppointment></MakeAppointment>
             <Testimonial></Testimonial>
             <Contact/>
+            <Chat/>
         </div>
     );
 };

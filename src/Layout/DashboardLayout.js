@@ -8,7 +8,7 @@ const DashboardLayout = () => {
     const {user}=useContext(AuthContext);
     const [isAdmin]=useAdmin(user?.email);
     return (
-        <div className='bg-[#f5f6fa]'>
+        <div className='bg-[#f5f6fa] px-10'>
             <Navbar></Navbar>
 
             <div className="drawer drawer-mobile">
