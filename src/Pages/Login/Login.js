@@ -9,8 +9,10 @@ import { AuthContext } from '../../Context/AuthProvider';
 import useToken from '../../hooks/useToken';
 import Lottie from "lottie-react";
 import login from '../Home/Home/Lottie/login.json';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login')
     const { register, handleSubmit,formState: { errors } } = useForm();
     const {signIn,logInWithGoogle}=useContext(AuthContext);
     const [loginError,setLoginError]=useState('');

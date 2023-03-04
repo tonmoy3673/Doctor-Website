@@ -3,9 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 
 const MyAppointment = () => {
+    useTitle('My-Appointment')
     const {user}=useContext(AuthContext);
 
     const url=`https://doctor-server-bice.vercel.app/bookings?email=${user?.email}`;
