@@ -15,10 +15,11 @@ const Footer = () => {
                     </div>
                     <div>
                         <span className="footer-title">Company</span>
-                        <Link className="link link-hover">About us</Link>
-                        <Link className="link link-hover">Contact</Link>
-                        <Link className="link link-hover">Jobs</Link>
-                        <Link className="link link-hover">Press kit</Link>
+                        <Link to='/' className="link link-hover">Home</Link>
+                        <Link to='/appointment' className="link link-hover">Appointment</Link>
+                        <Link to='/contact' className="link link-hover">Contact</Link>
+                        <Link to='/login' className="link link-hover">Login</Link>
+                        
                     </div>
                     <div>
                         <span className="footer-title">Legal</span>
@@ -27,7 +28,7 @@ const Footer = () => {
                         <Link className="link link-hover">Cookie policy</Link>
                     </div>
                     <div>
-                        <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+                        <p>Copyright © 2023 - All right reserved by Toothtopia Ltd</p>
                     </div>
                 </footer>
             </div>
