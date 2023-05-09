@@ -48,6 +48,7 @@ const MyAppointment = () => {
                     <tbody>
                         
                         {
+                            bookings.length ?
                             bookings.map((booking,i)=>
                                 <tr key={booking._id} className="hover">
                             <th>{i+1}</th>
@@ -62,6 +63,8 @@ const MyAppointment = () => {
                                 </button>
                                 
                                 </Link>
+                                
+                            
                                 }
                                 
                                 {
@@ -74,7 +77,9 @@ const MyAppointment = () => {
                                 
                                 </td>
                         </tr>
+                      
                                 )
+                                : null
                         }
                         
                     

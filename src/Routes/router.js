@@ -15,6 +15,7 @@ import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
 import AdminRoute from "./AdminRoute/AdminRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import About from "../Pages/Home/About/About";
 
 export const router=createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export const router=createBrowserRouter([
             {
                 path:'/contact',
                 element:<ContactUs/>
+            },
+            {
+                path:'/about',
+                element:<About/>
             }
            
             

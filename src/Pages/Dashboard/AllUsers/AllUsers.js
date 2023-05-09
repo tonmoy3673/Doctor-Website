@@ -14,6 +14,24 @@ const AllUsers = () => {
     }
     })
 
+    const handleDelete=id=>{
+      fetch(`https://doctor-server-bice.vercel.app/users/${id}`,{
+        method:'DELETE',
+        headers:{
+          authorization:`bearer ${localStorage.getItem('accessToken')}`
+      }
+
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        if (data.acknowledged) { 
+        toast.success('User Deleted Successfully!')
+        refetch();
+        }
+        
+      })
+    }
+
     const handleAdmin=id=>{
         fetch(`https://doctor-server-bice.vercel.app/users/admin/${id}`,{
             method: 'PUT',
@@ -53,7 +71,7 @@ const AllUsers = () => {
         <td className='font-semibold'>{user.name}</td>
         <td>{user.email}</td>
         <td>{ user?.role !=='admin' && <button onClick={() =>handleAdmin(user._id)} className='btn btn-xs btn-success text-white'>Make Admin</button>}</td>
-        <td><button className='btn btn-xs btn-error text-white'>Delete</button></td>
+        <td>{user?.role !=='admin' && <button onClick={()=>handleDelete(user._id)} className='btn btn-xs btn-error text-white'>Delete</button>}</td>
         
       </tr>
       )
