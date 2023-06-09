@@ -9,6 +9,7 @@ import Testimonial from '../Testimonial/Testimonial';
 import Contact from './Contact/Contact';
 import SideBanner from './SideBanner/SideBanner';
 import useTitle from '../../../hooks/useTitle';
+import Update from './Update/Update';
 
 const Home = () => {
     
@@ -22,6 +23,7 @@ const Home = () => {
             <SideBanner></SideBanner>
             <MakeAppointment></MakeAppointment>
             <Testimonial></Testimonial>
+            <Update/>
             <Contact/>
             <Chat/>
         </div>

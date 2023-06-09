@@ -39,12 +39,14 @@ const InfoCards = () => {
             <h2 className='mb-10 text-3xl font-semibold text-primary text-center'>Customer Support</h2>
             <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-center items-center px-16'>
            
-           <Lottie animationData={contact} loop={true} className='lg:w-5/12 mx-auto rounded'/>
+           <Lottie animationData={contact} loop={true} className='lg:w-5/12 mx-auto rounded' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"
+        data-aos-easing="ease-in-sine"/>
            
 
             
                 
-            <p className='text-start'>
+            <p className='text-start' data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500"
+        data-aos-easing="ease-in-sine">
             Regular dental visits are essential for maintaining good oral health and preventing serious dental problems. Dentists can identify and treat dental issues early on, which can help to prevent more severe problems from developing.If you are experiencing dental pain or other symptoms, it is important to see a dentist as soon as possible. Prompt treatment can help to prevent the problem from getting worse and may also help to alleviate your symptoms.
             </p>
            
