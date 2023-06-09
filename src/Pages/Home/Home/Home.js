@@ -8,8 +8,11 @@ import Services from '../Services/Services';
 import Testimonial from '../Testimonial/Testimonial';
 import Contact from './Contact/Contact';
 import SideBanner from './SideBanner/SideBanner';
+import useTitle from '../../../hooks/useTitle';
 
 const Home = () => {
+    
+    useTitle('Home');
     
     return (
         <div className='mx-auto px-10'>
